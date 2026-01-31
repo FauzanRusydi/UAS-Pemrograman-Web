@@ -1,0 +1,39 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Docker Up",
+			"type": "shell",
+			"command": "docker",
+			"args": [
+				"compose",
+				"up",
+				"-d",
+				"--build"
+			],
+			"isBackground": true
+		},
+		{
+			"label": "Docker Down Volume",
+			"type": "shell",
+			"command": "docker",
+			"args": [
+				"compose",
+				"down",
+				"-v"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "Docker Down Volume",
+			"type": "shell",
+			"command": "docker",
+			"args": [
+				"compose",
+				"down",
+				"-v"
+			],
+			"isBackground": false
+		}
+	]
+}

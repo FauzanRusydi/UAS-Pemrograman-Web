@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: ci3_web
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - CI_ENV=development
+      - BASE_URL=http://localhost:8080/
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASS=root
+      - DB_NAME=cms_db
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.6
+    container_name: ci3_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cms_db
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db_init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: ci3_pma
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
