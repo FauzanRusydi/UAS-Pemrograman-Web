@@ -1,5 +1,4 @@
-# CMS Portal  
-**Proyek UAS Pemrograman Web**
+**Project UAS Pemrograman Web**
 
 CMS Portal adalah aplikasi **Content Management System sederhana** yang dibuat menggunakan **CodeIgniter 3**.  
 Aplikasi ini digunakan untuk mengelola artikel dan kategori, serta memiliki halaman admin dan halaman publik.
@@ -90,7 +89,7 @@ Dockerfile
 - Database sudah disiapkan otomatis saat container dijalankan
 
 ## Identitas Mahasiswa
-- Nama: Maulana Rizky
-- NIM: 2410054
+- Nama: Muhammad Fauzan Rusydi
+- NIM: 2410053
 - Mata Kuliah: Pemrograman Web
 - Tahun: 2026
